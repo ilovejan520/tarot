@@ -1,276 +1,266 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
+<!-- saved from url=(0042)file:///C:/Users/ZhuanZ/Desktop/tarot.html -->
+<html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>塔罗运势历产品使用说明书（2025升级版）</title>
+    <title>塔罗运势历玩法说明</title>
     <style>
         :root {
-            --primary-color: #8a2be2;
-            --secondary-color: #d4af37;
-            --dark-bg: #120a2f;
-            --light-text: #f0e6ff;
-            --medium-text: #c0b0e8;
-            --border-radius: 8px;
-            --box-shadow: 0 4px 12px rgba(138, 43, 226, 0.3);
-            --transition: all 0.3s ease;
+            --primary: #7b2cbf; /* 塔罗紫，主色调 */
+            --secondary: #f1c40f; /* 金箔黄，强调色 */
+            --dark-bg: #0f0a1e; /* 深空黑，背景色 */
+            --light-text: #f8f5ff; /* 浅紫白，正文色 */
+            --medium-text: #c7b9ff; /* 淡紫灰，辅助文字色 */
+            --card-bg: rgba(23, 15, 49, 0.8); /* 卡片背景 */
+            --border-radius: 12px; /* 圆角 */
+            --shadow: 0 6px 18px rgba(123, 44, 191, 0.3); /* 阴影 */
+            --transition: all 0.3s ease; /* 过渡效果 */
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
             background-color: var(--dark-bg);
-            color: var(--light-text);
-            line-height: 1.6;
-            overflow-x: hidden;
             background-image: 
-                radial-gradient(circle at 20% 30%, rgba(138, 43, 226, 0.1) 0%, transparent 20%),
-                radial-gradient(circle at 80% 70%, rgba(138, 43, 226, 0.1) 0%, transparent 20%);
+                radial-gradient(circle at 10% 20%, rgba(123, 44, 191, 0.1) 0%, transparent 25%),
+                radial-gradient(circle at 90% 80%, rgba(241, 196, 15, 0.08) 0%, transparent 25%);
+            color: var(--light-text);
+            line-height: 1.8;
+            overflow-x: hidden;
         }
-        
+
+        /* 头部样式 */
         header {
-            background: linear-gradient(135deg, var(--primary-color), #5d1a8f);
-            color: white;
-            padding: 2rem 0;
+            background: linear-gradient(135deg, var(--primary), #5a189a);
+            padding: 3rem 0;
             text-align: center;
             position: relative;
             overflow: hidden;
-            box-shadow: var(--box-shadow);
+            box-shadow: var(--shadow);
         }
-        
+
         header::before {
             content: "";
             position: absolute;
             top: 0;
             left: 0;
-            right: 0;
-            bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
             opacity: 0.3;
             z-index: 0;
         }
-        
-        header h1 {
+
+        .header-content {
             position: relative;
             z-index: 1;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
         }
-        
+
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.8rem;
+            color: white;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--medium-text);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* 容器样式 */
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 3rem 2rem;
         }
-        
-        nav {
-            background-color: rgba(18, 10, 47, 0.95);
+
+        /* 导航样式 */
+        .nav {
             position: sticky;
             top: 0;
-            z-index: 100;
+            background-color: var(--card-bg);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--primary-color);
+            border-bottom: 1px solid rgba(123, 44, 191, 0.3);
+            padding: 1rem 0;
+            margin-bottom: 3rem;
+            z-index: 100;
+            box-shadow: var(--shadow);
         }
-        
+
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 2rem;
             display: flex;
-            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            justify-content: center;
             align-items: center;
-            padding: 1rem 2rem;
         }
-        
-        .logo {
-            color: var(--secondary-color);
-            font-weight: bold;
-            font-size: 1.2rem;
-            text-decoration: none;
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-links li {
-            margin-left: 1.5rem;
-        }
-        
-        .nav-links a {
+
+        .nav-link {
             color: var(--medium-text);
             text-decoration: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 20px;
             transition: var(--transition);
-            padding: 0.5rem 0;
-            position: relative;
+            font-size: 0.95rem;
         }
-        
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: var(--secondary-color);
+
+        .nav-link:hover, .nav-link.active {
+            background-color: rgba(123, 44, 191, 0.2);
+            color: var(--secondary);
+        }
+
+        /* 下载按钮样式 */
+        .download-btn {
+            color: white;
+            background-color: red;
+            text-decoration: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 20px;
             transition: var(--transition);
+            font-size: 0.95rem;
+            margin-left: auto;
+            font-weight: 500;
         }
-        
-        .nav-links a:hover {
-            color: var(--light-text);
+
+        .download-btn:hover {
+            background-color: red;
+            opacity: 0.9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 0, 0, 0.3);
         }
-        
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-        
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--light-text);
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-        
+
+        /* 章节样式 */
         section {
-            margin-bottom: 3rem;
-            position: relative;
-            z-index: 1;
+            margin-bottom: 4rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.6s ease forwards;
         }
-        
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section:nth-child(1) { animation-delay: 0.1s; }
+        section:nth-child(2) { animation-delay: 0.2s; }
+        section:nth-child(3) { animation-delay: 0.3s; }
+        section:nth-child(4) { animation-delay: 0.4s; }
+
         h2 {
-            color: var(--secondary-color);
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
             font-size: 2rem;
-        }
-        
-        h3 {
-            color: var(--light-text);
-            margin: 1.5rem 0 1rem;
-            font-size: 1.5rem;
-        }
-        
-        p {
-            margin-bottom: 1rem;
-        }
-        
-        .card {
-            background-color: rgba(30, 18, 68, 0.7);
-            border-radius: var(--border-radius);
-            padding: 1.5rem;
+            color: var(--secondary);
             margin-bottom: 1.5rem;
-            box-shadow: var(--box-shadow);
-            transition: var(--transition);
-            border-left: 3px solid var(--primary-color);
+            padding-bottom: 0.8rem;
+            border-bottom: 2px solid rgba(241, 196, 15, 0.2);
+            display: inline-block;
         }
-        
+
+        h3 {
+            font-size: 1.5rem;
+            color: var(--light-text);
+            margin: 2rem 0 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        h3::before {
+            content: "";
+            width: 8px;
+            height: 24px;
+            background-color: var(--secondary);
+            border-radius: 4px;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            color: var(--medium-text);
+            font-size: 1.05rem;
+        }
+
+        /* 卡片样式 */
+        .card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            margin: 1.5rem 0;
+            box-shadow: var(--shadow);
+            border-left: 3px solid var(--primary);
+            transition: var(--transition);
+        }
+
         .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(138, 43, 226, 0.4);
+            box-shadow: 0 10px 25px rgba(123, 44, 191, 0.4);
         }
-        
+
+        /* 表格样式 */
         table {
             width: 100%;
             border-collapse: collapse;
             margin: 1.5rem 0;
-            overflow: hidden;
             border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
+            overflow: hidden;
+            box-shadow: var(--shadow);
         }
-        
+
         th {
-            background-color: var(--primary-color);
+            background-color: var(--primary);
             color: white;
+            padding: 1.2rem;
             text-align: left;
-            padding: 1rem;
+            font-size: 1rem;
         }
-        
+
         td {
-            padding: 1rem;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+            padding: 1.2rem;
+            border-bottom: 1px solid rgba(123, 44, 191, 0.1);
+            color: var(--medium-text);
         }
-        
+
         tr:nth-child(even) {
-            background-color: rgba(138, 43, 226, 0.1);
+            background-color: rgba(123, 44, 191, 0.05);
         }
-        
+
         tr:hover {
-            background-color: rgba(138, 43, 226, 0.15);
+            background-color: rgba(123, 44, 191, 0.1);
         }
-        
-        .rotating-disc {
-            width: 200px;
-            height: 200px;
-            margin: 2rem auto;
-            position: relative;
-            perspective: 1000px;
-        }
-        
-        .disc {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-            animation: rotate 60s linear infinite;
-        }
-        
-        .disc:nth-child(2) {
-            animation-delay: -10s;
-        }
-        
-        .disc:nth-child(3) {
-            animation-delay: -20s;
-        }
-        
-        .disc:nth-child(4) {
-            animation-delay: -30s;
-        }
-        
-        .disc:nth-child(5) {
-            animation-delay: -40s;
-        }
-        
-        .disc:nth-child(6) {
-            animation-delay: -50s;
-        }
-        
-        @keyframes rotate {
-            from { transform: rotateY(0deg); }
-            to { transform: rotateY(360deg); }
-        }
-        
+
+        /* 步骤样式 */
         .steps {
-            counter-reset: step-counter;
-            list-style-type: none;
+            list-style: none;
             margin: 1.5rem 0;
+            padding-left: 1rem;
         }
-        
+
         .steps li {
-            position: relative;
-            padding-left: 3rem;
             margin-bottom: 1.5rem;
+            position: relative;
+            padding-left: 2.5rem;
         }
-        
+
         .steps li::before {
-            counter-increment: step-counter;
-            content: counter(step-counter);
+            content: attr(data-step);
             position: absolute;
             left: 0;
             top: 0;
-            width: 2rem;
-            height: 2rem;
-            background-color: var(--primary-color);
+            width: 1.8rem;
+            height: 1.8rem;
+            background-color: var(--primary);
             color: white;
             border-radius: 50%;
             display: flex;
@@ -278,176 +268,212 @@
             justify-content: center;
             font-weight: bold;
         }
-        
+
+        /* 高亮样式 */
         .highlight {
-            background-color: rgba(212, 175, 55, 0.1);
-            padding: 2rem;
-            border-radius: var(--border-radius);
-            margin: 2rem 0;
-            border-left: 3px solid var(--secondary-color);
+            background-color: rgba(241, 196, 15, 0.08);
+            border-left: 3px solid var(--secondary);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
         }
-        
-        .tag {
-            display: inline-block;
-            background-color: rgba(212, 175, 55, 0.2);
-            color: var(--secondary-color);
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            margin-right: 0.5rem;
+
+        .highlight p {
+            color: var(--light-text);
+            margin-bottom: 0.8rem;
+        }
+
+        /* 示例样式 */
+        .example {
+            background-color: rgba(123, 44, 191, 0.1);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin: 1.5rem 0;
+            border: 1px solid rgba(123, 44, 191, 0.2);
+        }
+
+        .example-title {
+            font-weight: bold;
+            color: var(--secondary);
             margin-bottom: 0.5rem;
         }
-        
+
+        /* 月相图片容器 */
+        .moon-phase {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+
+        .moon-card {
+            text-align: center;
+            width: 120px;
+        }
+
+        .moon-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 0.5rem;
+            background-color: rgba(241, 196, 15, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary);
+            font-size: 2rem;
+        }
+
+        .moon-name {
+            color: var(--medium-text);
+            font-size: 0.95rem;
+        }
+
+        /* 二维码样式 */
+        .qrcode {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .qrcode-img {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 10px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        /* 页脚样式 */
         footer {
-            background: linear-gradient(135deg, var(--primary-color), #5d1a8f);
-            color: white;
+            background: linear-gradient(135deg, var(--primary), #5a189a);
             padding: 3rem 0;
             text-align: center;
-            margin-top: 4rem;
+            margin-top: 5rem;
+            color: var(--medium-text);
         }
-        
+
         .footer-content {
-            max-width: 1200px;
+            max-width: 800px;
             margin: 0 auto;
             padding: 0 2rem;
         }
-        
-        .footer-content p {
+
+        .footer-title {
+            font-size: 1.5rem;
+            color: white;
             margin-bottom: 1rem;
         }
-        
+
         .copyright {
             margin-top: 2rem;
             font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.7);
+            opacity: 0.8;
         }
-        
+
+        /* 响应式样式 */
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 2rem;
+            h1 {
+                font-size: 2.2rem;
             }
-            
+
+            h2 {
+                font-size: 1.6rem;
+            }
+
+            h3 {
+                font-size: 1.3rem;
+            }
+
             .container {
-                padding: 1rem;
+                padding: 2rem 1rem;
             }
-            
-            .nav-links {
-                position: fixed;
-                top: 60px;
-                left: 0;
-                right: 0;
-                background-color: rgba(18, 10, 47, 0.95);
-                flex-direction: column;
-                align-items: center;
-                padding: 1rem;
-                transform: translateY(-150%);
-                transition: var(--transition);
-                z-index: 99;
+
+            .nav-container {
+                gap: 0.5rem;
             }
-            
-            .nav-links.active {
-                transform: translateY(0);
+
+            .nav-link, .download-btn {
+                padding: 0.5rem 0.8rem;
+                font-size: 0.9rem;
             }
-            
-            .nav-links li {
-                margin: 0.5rem 0;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-            }
-            
+
             table {
                 display: block;
                 overflow-x: auto;
             }
-            
-            .rotating-disc {
-                width: 150px;
-                height: 150px;
+
+            .moon-card {
+                width: 100px;
+            }
+
+            .moon-img {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
             }
         }
-        
-        /* Animation for elements */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        section {
-            animation: fadeIn 0.8s ease-out forwards;
-        }
-        
-        section:nth-child(1) { animation-delay: 0.1s; }
-        section:nth-child(2) { animation-delay: 0.2s; }
-        section:nth-child(3) { animation-delay: 0.3s; }
-        section:nth-child(4) { animation-delay: 0.4s; }
-        section:nth-child(5) { animation-delay: 0.5s; }
-        section:nth-child(6) { animation-delay: 0.6s; }
-        section:nth-child(7) { animation-delay: 0.7s; }
     </style>
 </head>
 <body>
+    <!-- 头部 -->
     <header>
-        <h1>塔罗运势历产品使用说明书</h1>
-        <p>2025升级版 | 连接时空的能量工具</p>
+        <div class="header-content">
+            <h1>塔罗运势历玩法说明</h1>
+            <p class="subtitle">探索内在力量的指引工具，连接时空能量与自我觉察的桥梁</p>
+        </div>
     </header>
-    
-    <nav>
+
+    <!-- 导航 -->
+    <nav class="nav">
         <div class="nav-container">
-            <a href="#" class="logo">塔罗运势历</a>
-            <button class="mobile-menu-btn">☰</button>
-            <ul class="nav-links">
-                <li><a href="#overview">产品概述</a></li>
-                <li><a href="#layers">符号详解</a></li>
-                <li><a href="#usage">使用方法</a></li>
-                <li><a href="#combinations">联动解读</a></li>
-                <li><a href="#tips">实用技巧</a></li>
-                <li><a href="#notes">注意事项</a></li>
-            </ul>
+            <a href="file:///C:/Users/ZhuanZ/Desktop/new/%E6%9C%AA%E5%91%BD%E5%90%8D.html#overview" class="nav-link active">产品概述</a>
+            <a href="file:///C:/Users/ZhuanZ/Desktop/new/%E6%9C%AA%E5%91%BD%E5%90%8D.html#symbol" class="nav-link">符号详解</a>
+            <a href="file:///C:/Users/ZhuanZ/Desktop/new/%E6%9C%AA%E5%91%BD%E5%90%8D.html#usage" class="nav-link">使用方法</a>
+            <a href="file:///C:/Users/ZhuanZ/Desktop/new/%E6%9C%AA%E5%91%BD%E5%90%8D.html#notes" class="nav-link">注意事项</a>
+            <a href="file:///C:/Users/ZhuanZ/Desktop/new/%E6%9C%AA%E5%91%BD%E5%90%8D.html#conclusion" class="nav-link">结语</a>
+            <!-- 新增下载按钮 -->
+            <a href="https://drive.google.com/file/d/1dy6qLXBO_Q3ZmPCTOF4pCXOjyWF3Yg7S/view?usp=sharing" class="download-btn" target="_blank">Download instruction</a>
         </div>
     </nav>
-    
+
+    <!-- 主内容 -->
     <div class="container">
+        <!-- 一、产品概述 -->
         <section id="overview">
-            <h2>一、产品概述</h2>
-            <p>塔罗万年历是一款融合塔罗哲学与日常生活的创新产品，通过7层可旋转圆盘系统，构建了"时空-能量-行动"的完整联动体系。每一层符号都蕴含着独特的能量指引，支持用户进行自我觉察、决策辅助和生活节奏调整。</p>
+            <h2>一、产品概述：洞察内在力量的指引工具</h2>
             
             <div class="card">
-                <h3>核心设计理念</h3>
-                <p>本产品不是占卜工具，而是自我对话的媒介，通过符号系统帮助用户觉察内在能量状态，从而做出更符合自身需求的决策。</p>
+                <h3>1.1 产品结构与设计理念</h3>
+                <p>"塔罗运势历"是一款融合塔罗哲学与日常生活的创新产品，通过7层可旋转圆盘系统，构建了"时空-能量-行动"的完整联动体系。每一层符号都蕴含着独特的能量指引，支持用户进行自我觉察、决策辅助和生活节奏调整。</p>
+                <p>本产品作为一款自我灵性对话的工具媒介，通过可视化符号帮助用户觉察内在能量状态，从而做出更符合自身需求的决策。</p>
             </div>
-            
-            <h3>产品基本结构</h3>
-            <p>产品包含7个可旋转圆盘层，从外到内依次为：</p>
-            
-            <div class="highlight">
-                <ol>
-                    <li><strong>星座符号层</strong>（第1层）：12个星座符号，代表不同的能量背景</li>
-                    <li><strong>四元素层</strong>（第2层）：权杖、圣杯、宝剑、星币四种元素，象征不同的能量类型</li>
-                    <li><strong>月份层</strong>（第3层）：1-12月数字标识，代表自然周期</li>
-                    <li><strong>十位日期层</strong>（第4层）：0、1、2、3四个数字</li>
-                    <li><strong>个位日期层</strong>（第5层）：1-9九个数字</li>
-                    <li><strong>星期层</strong>（第6层）：星期一至星期日的标识</li>
-                    <li><strong>月相层</strong>（第7层）：5种月相状态（新月、上弦月、满月、下弦月、晦月）</li>
-                </ol>
+
+            <div class="card">
+                <h3>1.2 产品基本结构</h3>
+                <p>产品包含7个可旋转圆盘层，从上到下依次为：</p>
+                <ul class="steps">
+                    <li data-step="1"><strong>星座层（第1层）</strong>：12个星座符号，代表不同的能量背景</li>
+                    <li data-step="2"><strong>四元素层（第2层）</strong>：权杖、圣杯、宝剑、星币四种元素，代表不同的能量类型</li>
+                    <li data-step="3"><strong>月份层（第3层）</strong>：1-12月数字标识，代表自然周期</li>
+                    <li data-step="4"><strong>十位日期层（第4层）</strong>：0、1、2、3，四个数字</li>
+                    <li data-step="5"><strong>个位日期层（第5层）</strong>：0-9，十个数字</li>
+                    <li data-step="6"><strong>星期层（第6层）</strong>：星期一至星期日</li>
+                    <li data-step="7"><strong>月相层（第7层）</strong>：8种月相状态，代表能量状态及事件成败概率</li>
+                </ul>
                 <p>通过自由旋转各层，用户可以组合出各种符号信息，进行自我探索和行动指引。</p>
             </div>
-            
-            <div class="rotating-disc">
-                <div class="disc" style="background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ccircle cx=%2250%22 cy=%2250%22 r=%2245%22 fill=%22none%22 stroke=%22%238a2be2%22 stroke-width=%222%22/%3E%3Cpath d=%22M50,5 L50,95%22 stroke=%22%23d4af37%22 stroke-width=%222%22/%3E%3Cpath d=%22M5,50 L95,50%22 stroke=%22%23d4af37%22 stroke-width=%222%22/%3E%3C/svg%3E');"></div>
-                <div class="disc" style="background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ccircle cx=%2250%22 cy=%2250%22 r=%2235%22 fill=%22none%22 stroke=%22%235d1a8f%22 stroke-width=%222%22/%3E%3Cpath d=%22M50,5 L50,95%22 stroke=%22%23ffffff%22 stroke-width=%221%22 stroke-dasharray=%222,2%22/%3E%3Cpath d=%22M5,50 L95,50%22 stroke=%22%23ffffff%22 stroke-width=%221%22 stroke-dasharray=%222,2%22/%3E%3C/svg%3E');"></div>
-                <div class="disc" style="background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ccircle cx=%2250%22 cy=%2250%22 r=%2225%22 fill=%22none%22 stroke=%22%238a2be2%22 stroke-width=%222%22/%3E%3Cpath d=%22M50,5 L50,95%22 stroke=%22%23ffffff%22 stroke-width=%221%22 stroke-dasharray=%222,2%22/%3E%3Cpath d=%22M5,50 L95,50%22 stroke=%22%23ffffff%22 stroke-width=%221%22 stroke-dasharray=%222,2%22/%3E%3C/svg%3E');"></div>
-                <div class="disc" style="background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ccircle cx=%2250%22 cy=%2250%22 r=%2215%22 fill=%22none%22 stroke=%22%23d4af37%22 stroke-width=%222%22/%3E%3Cpath d=%22M50,5 L50,95%22 stroke=%22%23ffffff%22 stroke-width=%221%22 stroke-dasharray=%222,2%22/%3E%3Cpath d=%22M5,50 L95,50%22 stroke=%22%23ffffff%22 stroke-width=%221%22 stroke-dasharray=%222,2%22/%3E%3C/svg%3E');"></div>
-            </div>
         </section>
-        
-        <section id="layers">
+
+        <!-- 二、每层符号意义详解 -->
+        <section id="symbol">
             <h2>二、每层符号意义详解</h2>
-            
+
             <div class="card">
-                <h3>2.1 第一层：星座符号层</h3>
-                <p>星座层定义了当日背景基调，影响情绪与事件色彩。每个星座代表一种特定的能量频率，为当日的经历提供色彩滤镜。</p>
+                <h3>2.1 第一层：星座符号层（对应"天空能量"）</h3>
+                <p>星座层定义了能量背景基调，每个星座代表一种特定的能量频率，以外部状态分析影响事件与情绪的发展。</p>
                 
                 <table>
                     <thead>
@@ -462,83 +488,83 @@
                         <tr>
                             <td>♈白羊座</td>
                             <td>新开始、行动力</td>
-                            <td>主动、热情、直接</td>
+                            <td>主动、热情</td>
                             <td>启动新项目、突破障碍</td>
                         </tr>
                         <tr>
                             <td>♉金牛座</td>
                             <td>稳定、物质</td>
-                            <td>耐心、务实、持久</td>
+                            <td>耐心、务实</td>
                             <td>财务规划、身体保养</td>
                         </tr>
                         <tr>
                             <td>♊双子座</td>
                             <td>沟通、思考</td>
-                            <td>灵活、好奇、善变</td>
-                            <td>学习、交流、写作</td>
+                            <td>灵活、好奇</td>
+                            <td>交流表达、写作</td>
                         </tr>
                         <tr>
                             <td>♋巨蟹座</td>
                             <td>情感、家庭</td>
-                            <td>敏感、保护、直觉</td>
+                            <td>敏感、保护</td>
                             <td>家庭活动、情感联结</td>
                         </tr>
                         <tr>
                             <td>♌狮子座</td>
                             <td>创造、领导力</td>
-                            <td>自信、热情、戏剧化</td>
+                            <td>自信、热情</td>
                             <td>创意表达、公众演讲</td>
                         </tr>
                         <tr>
                             <td>♍处女座</td>
                             <td>分析、服务</td>
-                            <td>细致、务实、挑剔</td>
+                            <td>细致、挑剔</td>
                             <td>组织整理、健康管理</td>
                         </tr>
                         <tr>
                             <td>♎天秤座</td>
                             <td>平衡、关系</td>
-                            <td>优雅、和谐、合作</td>
+                            <td>优雅、合作</td>
                             <td>谈判、社交、审美</td>
                         </tr>
                         <tr>
                             <td>♏天蝎座</td>
                             <td>变革、深度</td>
-                            <td>强烈、神秘、转化</td>
+                            <td>强烈、神秘</td>
                             <td>深度探索、心理工作</td>
                         </tr>
                         <tr>
                             <td>♐射手座</td>
                             <td>探索、哲学</td>
-                            <td>乐观、冒险、自由</td>
+                            <td>乐观、冒险</td>
                             <td>旅行、学习、信仰</td>
                         </tr>
                         <tr>
                             <td>♑摩羯座</td>
                             <td>责任、成就</td>
-                            <td>自律、目标导向、传统</td>
+                            <td>自律、传统</td>
                             <td>工作规划、长期目标</td>
                         </tr>
                         <tr>
                             <td>♒水瓶座</td>
                             <td>创新、社群</td>
-                            <td>独立、前瞻、人道</td>
-                            <td>创意项目、社交活动</td>
+                            <td>独立、前瞻</td>
+                            <td>创意、社交活动</td>
                         </tr>
                         <tr>
                             <td>♓双鱼座</td>
                             <td>灵性、直觉</td>
-                            <td>敏感、慈悲、梦幻</td>
-                            <td>艺术创作、冥想、慈善</td>
+                            <td>敏感、梦幻</td>
+                            <td>艺术创作、冥想</td>
                         </tr>
                     </tbody>
                 </table>
                 
                 <p><strong>使用建议</strong>：转动星座层至当日星座位置，作为解读的背景能量。</p>
             </div>
-            
+
             <div class="card">
-                <h3>2.2 第二层：四元素层</h3>
+                <h3>2.2 第二层：四元素层（对应"大地能量"）</h3>
                 <p>四元素层是能量应用的核心指引系统，直接关联行动方向。本层的四个符号代表了塔罗体系中的四大基本能量类型。</p>
                 
                 <table>
@@ -583,202 +609,206 @@
                     </tbody>
                 </table>
                 
-                <p><strong>元素联动解读</strong>：元素与其他层符号组合时，会产生协同效应。例如：</p>
-                <ul>
-                    <li>权杖+白羊座：增强行动力，适合新计划启动</li>
-                    <li>圣杯+巨蟹座：增强情感联结，适合家庭活动</li>
-                    <li>宝剑+双子座：增强思维能力，适合学习交流</li>
-                    <li>星币+摩羯座：增强务实性，适合财务规划</li>
-                </ul>
+                <div class="highlight">
+                    <p><strong>元素联动解读</strong>：元素与其他层符号组合时，会产生协同效应。</p>
+                    <ul>
+                        <li>权杖 + 白羊座：增强行动力，适合新计划启动</li>
+                        <li>圣杯 + 巨蟹座：增强情感联结，适合家庭活动</li>
+                        <li>宝剑 + 双子座：增强思维能力，适合学习交流</li>
+                        <li>星币 + 摩羯座：增强务实性，适合财务规划</li>
+                    </ul>
+                </div>
             </div>
-            
+
             <div class="card">
-                <h3>2.3 第三层：月份层</h3>
+                <h3>2.3 第三层：月份层（对应"时间周期"）</h3>
                 <p>月份层标记自然周期，与其他层符号组合时会产生特定的能量共振。虽然月份本身无特殊意义，但与其他层组合时会产生丰富的解读可能性。</p>
                 
-                <p><strong>月份与元素的季节性关联</strong>（仅供参考）：</p>
-                <ul>
-                    <li>春季（3-5月）：权杖能量增强</li>
-                    <li>夏季（6-8月）：圣杯能量增强</li>
-                    <li>秋季（9-11月）：宝剑能量增强</li>
-                    <li>冬季（12-2月）：星币能量增强</li>
-                </ul>
+                <div class="highlight">
+                    <p><strong>月份与元素的季节性关联</strong>：</p>
+                    <ul>
+                        <li>春季（3-5月）：权杖能量增强</li>
+                        <li>夏季（6-8月）：圣杯能量增强</li>
+                        <li>秋季（9-11月）：宝剑能量增强</li>
+                        <li>冬季（12-2月）：星币能量增强</li>
+                    </ul>
+                </div>
                 
                 <p><strong>使用建议</strong>：转动月份层至当前月份，作为时间背景。</p>
             </div>
-            
+
             <div class="card">
-                <h3>2.4 第四层与第五层：数字层</h3>
-                <p>数字层是连接时间与塔罗能量的核心枢纽，通过第四层（0、1、2、3）与第五层（1-9）的组合，可以形成日期或塔罗牌数字。</p>
+                <h3>2.4 第四层与第五层：数字层（对应"具体能量"）</h3>
+                <p>数字层是连接时间与塔罗能量的核心枢纽，通过第四层（0、1、2、3）与第五层（0-9）的组合，可以形成日期或塔罗牌数字牌。</p>
                 
                 <h4>数字组合规则</h4>
-                <ol>
-                    <li><strong>日期组合</strong>：将第四层和第五层组合成实际日期的十位和个位数字（如10月24日=1+0+2+4）</li>
-                    <li><strong>塔罗数字组合</strong>：将第四层和第五层组合成0-21的塔罗牌数字（如0+1=1号魔术师，2+1=21号世界牌）</li>
-                </ol>
-                
-                <p><strong>塔罗数字0-21的核心含义</strong>（融合数字学与塔罗象征）：</p>
-                
+                <ul class="steps">
+                    <li data-step="1"><strong>日期组合</strong>：将第四层和第五层组合成实际日期的十位和个位数字（如24日=2+4）</li>
+                    <li data-step="2"><strong>塔罗大牌数字组合</strong>：将第四层和第五层组合成0-21的塔罗牌数字（如0+1=1号魔术师，2+1=21号世界牌）</li>
+                    <li data-step="3"><strong>塔罗小牌数字组合</strong>：转到第二层四元素和第五层数字组合成权杖、圣杯、宝剑、星币的数字牌（如星币+0，对应星币10）</li>
+                </ul>
+
+                <h4>塔罗大牌数字0-21的核心含义</h4>
                 <table>
                     <thead>
                         <tr>
-                            <th>塔罗数字</th>
+                            <th>塔罗大牌数字</th>
                             <th>核心含义</th>
                             <th>正向特质</th>
-                            <th>挑战提示</th>
+                            <th>逆向特质</th>
                             <th>最佳应用场景</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>0愚人</td>
+                            <td>0 愚人</td>
                             <td>无限可能、新开始</td>
                             <td>冒险精神、开放心态</td>
                             <td>轻率、不计后果</td>
                             <td>新计划启动、创意项目</td>
                         </tr>
                         <tr>
-                            <td>1魔术师</td>
+                            <td>1 魔术师</td>
                             <td>创造、资源整合</td>
                             <td>执行力、创新力</td>
                             <td>自负、计划不周</td>
                             <td>项目规划、创意表达</td>
                         </tr>
                         <tr>
-                            <td>2女祭司</td>
+                            <td>2 女祭司</td>
                             <td>直觉、内在智慧</td>
                             <td>洞察力、直觉力</td>
                             <td>过度敏感、犹豫不决</td>
                             <td>决策前的内心探索</td>
                         </tr>
                         <tr>
-                            <td>3皇后</td>
+                            <td>3 皇后</td>
                             <td>丰盛、滋养</td>
                             <td>创造力、母性特质</td>
                             <td>依赖、过度保护</td>
                             <td>家庭活动、创意工作</td>
                         </tr>
                         <tr>
-                            <td>4皇帝</td>
+                            <td>4 皇帝</td>
                             <td>秩序、结构</td>
                             <td>领导力、组织力</td>
                             <td>控制欲、僵化</td>
                             <td>团队管理、系统建立</td>
                         </tr>
                         <tr>
-                            <td>5教皇</td>
+                            <td>5 教皇</td>
                             <td>指引、学习</td>
                             <td>智慧、传统</td>
                             <td>教条、保守</td>
                             <td>学习新知识、寻求指导</td>
                         </tr>
                         <tr>
-                            <td>6恋人</td>
+                            <td>6 恋人</td>
                             <td>选择、关系</td>
                             <td>吸引力、和谐</td>
                             <td>优柔寡断、依赖</td>
                             <td>情感决策、合作关系</td>
                         </tr>
                         <tr>
-                            <td>7战车</td>
+                            <td>7 战车</td>
                             <td>胜利、掌控</td>
                             <td>意志力、决心</td>
                             <td>冲突、固执</td>
                             <td>面对挑战、坚持目标</td>
                         </tr>
                         <tr>
-                            <td>8力量</td>
+                            <td>8 力量</td>
                             <td>内在力量、耐心</td>
                             <td>勇气、韧性</td>
                             <td>强迫、缺乏耐心</td>
                             <td>克服困难、自我提升</td>
                         </tr>
                         <tr>
-                            <td>9隐者</td>
+                            <td>9 隐者</td>
                             <td>内省、智慧</td>
                             <td>洞察力、独处</td>
                             <td>孤立、脱离现实</td>
                             <td>反思、寻求真理</td>
                         </tr>
                         <tr>
-                            <td>10命运之轮</td>
+                            <td>10 命运之轮</td>
                             <td>变化、循环</td>
                             <td>适应性、接受力</td>
                             <td>抗拒变化、焦虑</td>
                             <td>面对转变、适应环境</td>
                         </tr>
                         <tr>
-                            <td>11正义</td>
+                            <td>11 正义</td>
                             <td>平衡、公正</td>
                             <td>理性、判断力</td>
                             <td>过于严苛、固执</td>
                             <td>解决冲突、法律事务</td>
                         </tr>
                         <tr>
-                            <td>12吊人</td>
+                            <td>12 吊人</td>
                             <td>牺牲、等待</td>
                             <td>奉献、耐心</td>
                             <td>拖延、被动</td>
                             <td>等待时机、改变视角</td>
                         </tr>
                         <tr>
-                            <td>13死神</td>
+                            <td>13 死神</td>
                             <td>结束、重生</td>
                             <td>变革、勇气</td>
                             <td>抗拒结束、恐惧</td>
                             <td>放下过去、新开始</td>
                         </tr>
                         <tr>
-                            <td>14节制</td>
+                            <td>14 节制</td>
                             <td>平衡、调和</td>
                             <td>节制、耐心</td>
                             <td>犹豫不决、优柔寡断</td>
                             <td>健康管理、情绪调节</td>
                         </tr>
                         <tr>
-                            <td>15恶魔</td>
+                            <td>15 恶魔</td>
                             <td>诱惑、束缚</td>
                             <td>现实、自我认知</td>
                             <td>沉迷、受困</td>
                             <td>面对诱惑、自我解放</td>
                         </tr>
                         <tr>
-                            <td>16高塔</td>
+                            <td>16 高塔</td>
                             <td>剧变、觉醒</td>
                             <td>突破、重建</td>
                             <td>抗拒改变、创伤</td>
                             <td>危机应对、破旧立新</td>
                         </tr>
                         <tr>
-                            <td>17星星</td>
+                            <td>17 星星</td>
                             <td>希望、灵感</td>
                             <td>乐观、创造力</td>
                             <td>不切实际、空想</td>
                             <td>寻找灵感、设定愿景</td>
                         </tr>
                         <tr>
-                            <td>18月亮</td>
+                            <td>18 月亮</td>
                             <td>幻觉、直觉</td>
                             <td>想象力、直觉力</td>
                             <td>恐惧、欺骗</td>
                             <td>梦境解析、创意工作</td>
                         </tr>
                         <tr>
-                            <td>19太阳</td>
+                            <td>19 太阳</td>
                             <td>喜悦、成功</td>
                             <td>活力、自信</td>
                             <td>过度表现、自负</td>
                             <td>庆祝成就、提振士气</td>
                         </tr>
                         <tr>
-                            <td>20审判</td>
+                            <td>20 审判</td>
                             <td>觉醒、决定</td>
                             <td>自我认知、改变</td>
                             <td>抗拒改变、逃避</td>
                             <td>重大决策、自我评估</td>
                         </tr>
                         <tr>
-                            <td>21世界</td>
+                            <td>21 世界</td>
                             <td>圆满、完成</td>
                             <td>成就、整合</td>
                             <td>自满、停滞不前</td>
@@ -786,779 +816,419 @@
                         </tr>
                     </tbody>
                 </table>
-                
-                <p><strong>数字与元素的联动解读</strong>：数字含义会因元素层的不同而产生变化。例如：</p>
-                <ul>
-                    <li>数字1（魔术师）+权杖：增强创意与行动力</li>
-                    <li>数字1（魔术师）+圣杯：增强情感联结与直觉</li>
-                    <li>数字1（魔术师）+宝剑：增强沟通与思维能力</li>
-                    <li>数字1（魔术师）+星币：增强实际执行与资源管理</li>
-                </ul>
+
+                <h4>塔罗小牌数字的核心含义</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>塔罗小牌数字</th>
+                            <th>核心含义</th>
+                            <th>正向特质</th>
+                            <th>逆向特质</th>
+                            <th>最佳应用场景</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>开端、新生</td>
+                            <td>全新开始、潜力萌芽</td>
+                            <td>迷茫混沌、不知所措</td>
+                            <td>新计划开启、新关系建立</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>选择、平衡</td>
+                            <td>谨慎抉择、关系协调</td>
+                            <td>犹豫不定、冲突失衡</td>
+                            <td>面临两难决策、合作洽谈</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>进展、协作</td>
+                            <td>初步成果、团队协作</td>
+                            <td>进展缓慢、合作分歧</td>
+                            <td>项目推进中期、社交聚会</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>稳固、沉淀</td>
+                            <td>稳定发展、基础夯实</td>
+                            <td>停滞不前、过于保守</td>
+                            <td>局面稳定期、规划长期目标</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>变动、冲突</td>
+                            <td>突破困境、适应变化</td>
+                            <td>混乱无序、矛盾激化</td>
+                            <td>面对挑战、冲突调解</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>和谐、互助</td>
+                            <td>关系融洽、互相扶持</td>
+                            <td>关系紧张、缺乏互助</td>
+                            <td>团队合作、情感沟通</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>探索、坚持</td>
+                            <td>勇于尝试、持之以恒</td>
+                            <td>盲目冒险、半途而废</td>
+                            <td>开拓新领域、长期目标追求</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>因果、成熟</td>
+                            <td>成果显现、经验成熟</td>
+                            <td>因果报应、过度自负</td>
+                            <td>收获阶段、经验总结</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>圆满、孤独</td>
+                            <td>目标达成、自我满足</td>
+                            <td>孤独失落、骄傲自满</td>
+                            <td>个人成就达成、独处反思</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>结束、新始</td>
+                            <td>完美收官、新程开启</td>
+                            <td>拒绝改变、结局遗憾</td>
+                            <td>项目收尾、新周期规划</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-            
+
             <div class="card">
-                <h3>2.5 第六层：星期层</h3>
+                <h3>2.5 第六层：星期层（对应"日常行动"）</h3>
                 <p>星期层为每日行动提供具体指引，将一周七天与四元素和数字能量相结合。</p>
                 
                 <table>
                     <thead>
                         <tr>
                             <th>星期</th>
-                            <th>元素关联</th>
-                            <th>数字关联</th>
-                            <th>核心特质</th>
+                            <th>象征意义</th>
                             <th>最佳行动建议</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>星期一</td>
-                            <td>圣杯（水）</td>
-                            <td>数字2（关系）</td>
                             <td>情感、反思</td>
                             <td>情感沟通、计划制定</td>
                         </tr>
                         <tr>
                             <td>星期二</td>
-                            <td>权杖（火）</td>
-                            <td>数字5（变化）</td>
                             <td>行动、勇气</td>
                             <td>启动项目、解决问题</td>
                         </tr>
                         <tr>
                             <td>星期三</td>
-                            <td>宝剑（风）</td>
-                            <td>数字6（平衡）</td>
                             <td>思维、沟通</td>
                             <td>学习、会议、写作</td>
                         </tr>
                         <tr>
                             <td>星期四</td>
-                            <td>星币（土）</td>
-                            <td>数字4（稳定）</td>
                             <td>务实、积累</td>
                             <td>工作推进、财务管理</td>
                         </tr>
                         <tr>
                             <td>星期五</td>
-                            <td>综合能量</td>
-                            <td>数字7（直觉）</td>
                             <td>创造力、社交</td>
                             <td>创意活动、社交聚会</td>
                         </tr>
                         <tr>
                             <td>星期六</td>
-                            <td>星币（土）</td>
-                            <td>数字8（成就）</td>
                             <td>务实、成果</td>
                             <td>项目收尾、家务整理</td>
                         </tr>
                         <tr>
                             <td>星期日</td>
-                            <td>综合能量</td>
-                            <td>数字9（圆满）</td>
                             <td>休息、整合</td>
-                            <td>家庭时光、自我关怀</td>
+                            <td>放松、冥想、规划下周</td>
                         </tr>
                     </tbody>
                 </table>
-                
-                <p><strong>使用建议</strong>：转动星期层至当前星期，作为行动指引的参考。</p>
             </div>
-            
+
             <div class="card">
-                <h3>2.6 第七层：月相层</h3>
-                <p>月相层代表五种月相状态，反映内在能量的节奏和情绪周期，为行动提供时机建议。</p>
+                <h3>2.6 第七层：月相层（对应"能量状态"）</h3>
+                <p>月相层是整个系统的能量调节器，代表了能量的周期性变化和事件的发展阶段。月相变化直接影响行动的时机选择和能量强度。</p>
+                
+                <div class="moon-phase">
+                    <div class="moon-card">
+                        <div class="moon-img">🌑</div>
+                        <div class="moon-name">新月</div>
+                    </div>
+                    <div class="moon-card">
+                        <div class="moon-img">🌒</div>
+                        <div class="moon-name">峨眉月</div>
+                    </div>
+                    <div class="moon-card">
+                        <div class="moon-img">🌓</div>
+                        <div class="moon-name">上弦月</div>
+                    </div>
+                    <div class="moon-card">
+                        <div class="moon-img">🌔</div>
+                        <div class="moon-name">盈凸月</div>
+                    </div>
+                    <div class="moon-card">
+                        <div class="moon-img">🌕</div>
+                        <div class="moon-name">满月</div>
+                    </div>
+                    <div class="moon-card">
+                        <div class="moon-img">🌖</div>
+                        <div class="moon-name">亏凸月</div>
+                    </div>
+                    <div class="moon-card">
+                        <div class="moon-img">🌗</div>
+                        <div class="moon-name">下弦月</div>
+                    </div>
+                    <div class="moon-card">
+                        <div class="moon-img">🌘</div>
+                        <div class="moon-name">亏眉月</div>
+                    </div>
+                </div>
                 
                 <table>
                     <thead>
                         <tr>
                             <th>月相</th>
-                            <th>阶段</th>
-                            <th>能量特质</th>
-                            <th>最佳行动</th>
-                            <th>避免行为</th>
+                            <th>能量状态</th>
+                            <th>事件发展阶段</th>
+                            <th>行动建议</th>
+                            <th>成功概率</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>新月</td>
-                            <td>开始</td>
-                            <td>播种、设定意图</td>
-                            <td>计划制定、目标设定</td>
-                            <td>急于求成</td>
+                            <td>能量萌芽</td>
+                            <td>计划阶段</td>
+                            <td>设定目标、启动计划</td>
+                            <td>40%（潜力积累期）</td>
+                        </tr>
+                        <tr>
+                            <td>眉月</td>
+                            <td>能量增长</td>
+                            <td>实施初期</td>
+                            <td>细化计划、小步推进</td>
+                            <td>50%（初步发展期）</td>
                         </tr>
                         <tr>
                             <td>上弦月</td>
-                            <td>增长</td>
-                            <td>行动、发展</td>
-                            <td>执行计划、主动沟通</td>
-                            <td>停滞不前</td>
+                            <td>能量稳定</td>
+                            <td>中期执行</td>
+                            <td>积极行动、解决问题</td>
+                            <td>60%（稳步发展期）</td>
+                        </tr>
+                        <tr>
+                            <td>盈凸月</td>
+                            <td>能量增强</td>
+                            <td>加速发展</td>
+                            <td>全力推进、扩大成果</td>
+                            <td>75%（快速发展期）</td>
                         </tr>
                         <tr>
                             <td>满月</td>
-                            <td>高峰</td>
-                            <td>收获、显现</td>
-                            <td>庆祝成果、释放情绪</td>
-                            <td>重大决策</td>
+                            <td>能量巅峰</td>
+                            <td>成果显现</td>
+                            <td>收获成果、庆祝成就</td>
+                            <td>90%（成果高峰期）</td>
+                        </tr>
+                        <tr>
+                            <td>亏凸月</td>
+                            <td>能量收敛</td>
+                            <td>巩固阶段</td>
+                            <td>总结经验、调整方向</td>
+                            <td>70%（巩固调整期）</td>
                         </tr>
                         <tr>
                             <td>下弦月</td>
-                            <td>减弱</td>
-                            <td>反思、释放</td>
-                            <td>总结经验、断舍离</td>
-                            <td>过度消耗</td>
+                            <td>能量减弱</td>
+                            <td>收尾阶段</td>
+                            <td>完成收尾、处理遗留</td>
+                            <td>50%（收尾整理期）</td>
                         </tr>
                         <tr>
-                            <td>晦月</td>
-                            <td>结束</td>
-                            <td>休息、整合</td>
-                            <td>内省、休息</td>
-                            <td>过度社交</td>
+                            <td>残月</td>
+                            <td>能量休眠</td>
+                            <td>反思阶段</td>
+                            <td>休息反思、准备新生</td>
+                            <td>30%（能量休整期）</td>
                         </tr>
                     </tbody>
                 </table>
+            </div>
+        </section>
+
+        <!-- 三、使用方法 -->
+        <section id="usage">
+            <h2>三、使用方法：如何解读塔罗运势历</h2>
+            
+            <div class="card">
+                <h3>3.1 基础使用步骤</h3>
+                <p>塔罗运势历的使用遵循"定位-解读-行动"的基本流程，通过以下步骤可以获得每日能量指引：</p>
                 
-                <p><strong>月相与四元素的联动</strong>：月相与元素组合时会产生协同效应。例如：</p>
+                <ul class="steps">
+                    <li data-step="1"><strong>时间定位</strong>：将月份层、十位日期层、个位日期层、星期层旋转至当前日期和星期，作为基础时间坐标</li>
+                    <li data-step="2"><strong>能量定位</strong>：查看当日星座（可根据太阳星座或上升星座选择）和实际月相，旋转至对应位置</li>
+                    <li data-step="3"><strong>问题聚焦</strong>：在心中明确一个希望获得指引的问题或领域（如事业、关系、健康等）</li>
+                    <li data-step="4"><strong>元素选择</strong>：根据问题领域选择对应的元素层（权杖-事业/创意，圣杯-情感/关系，宝剑-思维/决策，星币-物质/健康）</li>
+                    <li data-step="5"><strong>综合解读</strong>：观察所有对齐的符号组合，参考各层含义进行综合解读</li>
+                    <li data-step="6"><strong>行动规划</strong>：根据解读结果，制定当日或近期的行动计划</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>3.2 不同场景的使用方法</h3>
+                
+                <h4>日常能量指引（每日使用）</h4>
+                <div class="example">
+                    <div class="example-title">使用流程：</div>
+                    <p>1. 旋转时间层至当日日期和星期</p>
+                    <p>2. 对齐当前月相和星座</p>
+                    <p>3. 无需特别选择元素，观察自然对齐的元素</p>
+                    <p>4. 解读当日整体能量状态和潜在机遇</p>
+                </div>
+                
+                <h4>决策辅助（面临选择时）</h4>
+                <div class="example">
+                    <div class="example-title">使用流程：</div>
+                    <p>1. 设定时间层为决策相关的日期</p>
+                    <p>2. 保持月相和星座位置不变</p>
+                    <p>3. 分别旋转元素层至不同元素，观察与其他层的组合</p>
+                    <p>4. 比较不同元素组合下的解读，获得决策参考</p>
+                </div>
+                
+                <h4>项目规划（长期计划）</h4>
+                <div class="example">
+                    <div class="example-title">使用流程：</div>
+                    <p>1. 确定项目周期，旋转时间层查看关键时间点</p>
+                    <p>2. 关注满月（成果）和新月（启动）等关键月相日期</p>
+                    <p>3. 根据项目类型选择对应元素（如创意项目选权杖）</p>
+                    <p>4. 结合数字层含义，规划项目里程碑</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>3.3 符号组合解读示例</h3>
+                
+                <div class="example">
+                    <div class="example-title">示例1：日常能量解读</div>
+                    <p><strong>组合</strong>：白羊座 + 权杖 + 3月 + 15日 + 星期三 + 上弦月</p>
+                    <p><strong>解读</strong>：今日能量偏向行动与沟通（白羊座+权杖+星期三），适合推进创意项目的中期工作（上弦月+3月）。15日组合对应塔罗15号恶魔牌，提示注意避免过度投入工作而忽略休息，保持工作生活平衡。</p>
+                    <p><strong>行动建议</strong>：上午进行创意工作，下午安排会议交流想法，晚上需要适当放松，避免 burnout。</p>
+                </div>
+                
+                <div class="example">
+                    <div class="example-title">示例2：关系问题解读</div>
+                    <p><strong>组合</strong>：巨蟹座 + 圣杯 + 7月 + 22日 + 星期五 + 盈凸月</p>
+                    <p><strong>解读</strong>：情感能量强烈（巨蟹座+圣杯），适合处理家庭关系或亲密关系（星期五）。22日组合对应塔罗22号（0号愚人），提示在关系中保持开放心态。盈凸月能量支持关系的积极发展，成功概率较高。</p>
+                    <p><strong>行动建议</strong>：安排家庭聚会或与伴侣深入交流，表达真实感受，可能会有意外的积极进展。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 四、注意事项 -->
+        <section id="notes">
+            <h2>四、注意事项：正确使用的重要提示</h2>
+            
+            <div class="card">
+                <h3>4.1 工具本质与局限性</h3>
+                
+                <div class="highlight">
+                    <p><strong>重要提示</strong>：塔罗运势历是一款自我觉察与决策辅助工具，而非预测未来的神器。它的价值在于帮助你连接内在智慧，而非替代你的判断。</p>
+                </div>
+                
+                <p>本产品的局限性：</p>
                 <ul>
-                    <li>新月+权杖：适合启动新项目或创意工作</li>
-                    <li>满月+圣杯：适合情感交流或庆祝活动</li>
-                    <li>下弦月+宝剑：适合分析问题或解决冲突</li>
-                    <li>晦月+星币：适合休息或财务规划</li>
+                    <li>无法预测具体事件的发生时间和结果</li>
+                    <li>能量指引需要结合个人实际情况解读</li>
+                    <li>符号含义是一般性指导，而非绝对真理</li>
+                    <li>不应作为重大人生决策的唯一依据</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>4.2 正确的使用心态</h3>
+                <p>使用塔罗运势历时，保持以下心态将获得更好的体验：</p>
+                
+                <ul class="steps">
+                    <li data-step="1"><strong>开放与接纳</strong>：对所有可能的解读保持开放态度，不预设答案</li>
+                    <li data-step="2"><strong>自我负责</strong>：明白最终决策仍由自己负责，工具仅为辅助</li>
+                    <li data-step="3"><strong>定期反思</strong>：使用后记录感受，定期回顾以深化自我认知</li>
+                    <li data-step="4"><strong>不过度依赖</strong>：避免事事咨询，保留独立思考空间</li>
+                    <li data-step="5"><strong>尊重直觉</strong>：当解读与直觉冲突时，优先信任自己的感受</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>4.3 使用禁忌与误区</h3>
+                <p>为避免误用，请留意以下禁忌：</p>
+                
+                <ul>
+                    <li><strong>忌过度解读</strong>：不要试图从符号中寻找所有问题的答案</li>
+                    <li><strong>忌主观强加</strong>：不要强行将符号解读为自己期望的结果</li>
+                    <li><strong>忌预测他人</strong>：本工具用于自我探索，不适合解读他人命运</li>
+                    <li><strong>忌极端依赖</strong>：日常生活决策无需每次都参考工具</li>
+                    <li><strong>忌忽视现实</strong>：符号指引需结合现实情况，不可脱离实际</li>
+                </ul>
+                
+                <p>常见误区：</p>
+                <ul>
+                    <li>认为"成功概率"是绝对的事件结果预测</li>
+                    <li>只关注"好"的解读，忽略警示信息</li>
+                    <li>期望获得具体的行动指令，而非启发思考</li>
+                    <li>使用频率过高，失去独立判断能力</li>
                 </ul>
             </div>
         </section>
-        
-        <section id="usage">
-            <h2>三、使用方法：从基础到进阶的多元玩法</h2>
+
+        <!-- 五、结语 -->
+        <section id="conclusion">
+            <h2>五、结语：与内在智慧连接的旅程</h2>
             
             <div class="card">
-                <h3>3.1 基础玩法：每日能量解读</h3>
-                
-                <ol class="steps">
-                    <li>
-                        <strong>校准时间</strong>
-                        <p>将第三层至第五层调整至当前日期，第六层对准当前星期，第七层对准当前月相。</p>
-                    </li>
-                    <li>
-                        <strong>旋转元素与星座</strong>
-                        <p>闭上眼睛，深呼吸三次，然后随机旋转第一层（星座）和第二层（元素），凭直觉停驻。</p>
-                    </li>
-                    <li>
-                        <strong>解读能量组合</strong>
-                        <ol>
-                            <li><strong>星座能量</strong>：确定当日背景基调（如双子座的交流感、天蝎座的深度）</li>
-                            <li><strong>元素能量</strong>：确定能量应用领域（如权杖的事业、圣杯的情感）</li>
-                            <li><strong>月相指引</strong>：确定行动时机（如新月播种、满月收获）</li>
-                            <li><strong>星期建议</strong>：确定具体行动方向（如星期二适合启动项目）</li>
-                        </ol>
-                    </li>
-                </ol>
-                
-                <p><strong>示例解读</strong>：</p>
-                <p>"今日天蝎座（深度）+圣杯（情感）+上弦月（行动）→ 适合与伴侣进行深度对话，主动表达感受，推进关系发展"。</p>
+                <h3>5.1 工具的真正价值</h3>
+                <p>塔罗运势历的最终目的不是提供答案，而是帮助你唤醒内在的智慧与直觉。通过与这些古老符号的对话，你将逐渐培养对自身能量的觉察能力，理解生命中各种力量的运作方式。</p>
+                <p>真正的指引来自于你与工具的互动过程——在解读中反思，在反思中觉察，在觉察中成长。</p>
             </div>
-            
+
             <div class="card">
-                <h3>3.2 进阶玩法：决策支持系统</h3>
-                
-                <ol class="steps">
-                    <li>
-                        <strong>明确决策问题</strong>
-                        <p>确定需要决策的领域（如事业、感情、健康）</p>
-                    </li>
-                    <li>
-                        <strong>调整相关层</strong>
-                        <ol>
-                            <li>转动第二层至对应领域（如事业→权杖，感情→圣杯）</li>
-                            <li>转动第七层至当前月相，获取时机建议</li>
-                            <li>转动第四层和第五层，组合成相关塔罗数字</li>
-                        </ol>
-                    </li>
-                    <li>
-                        <strong>综合解读</strong>
-                        <p>结合数字、元素、月相的能量，获取决策建议。</p>
-                    </li>
-                </ol>
-                
-                <p><strong>示例决策</strong>：</p>
-                <p>"是否接受新工作机会？→ 权杖（事业）+下弦月（反思）+10号命运之轮（变化）→ 建议先梳理当前工作状态，再决定是否接受变化"。</p>
+                <h3>5.2 持续探索的邀请</h3>
+                <p>随着使用时间的推移，你会发展出属于自己的解读方式。我们鼓励你：</p>
+                <ul>
+                    <li>记录每次使用的感受与结果，建立个人解读库</li>
+                    <li>尝试不同的组合方式，发现符号间的新联系</li>
+                    <li>结合其他自我探索工具，形成更全面的认知</li>
+                    <li>在使用过程中保持好奇心与探索欲</li>
+                </ul>
+                <p>记住，塔罗运势历是一面镜子，映照出的是你内在已有的智慧与力量。</p>
             </div>
-            
-            <div class="card">
-                <h3>3.3 深度玩法：个人成长追踪</h3>
-                
-                <ol class="steps">
-                    <li>
-                        <strong>设定月度主题</strong>
-                        <p>在新月时，转动第二层至目标领域（如权杖=事业，圣杯=情感），设定月度成长主题。</p>
-                    </li>
-                    <li>
-                        <strong>每日能量记录</strong>
-                        <p>每天转动第一层和第二层，记录当天的能量组合和关键事件，形成个人能量日志。</p>
-                    </li>
-                    <li>
-                        <strong>满月回顾</strong>
-                        <p>在满月时，回顾本月能量轨迹，评估目标进展，调整行动计划。</p>
-                    </li>
-                </ol>
-                
-                <p><strong>记录模板</strong>：</p>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>日期</th>
-                            <th>星座+元素组合</th>
-                            <th>关键事件</th>
-                            <th>觉察与行动</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>9.1</td>
-                            <td>白羊座+权杖</td>
-                            <td>启动新项目</td>
-                            <td>感觉充满活力，需注意节奏</td>
-                        </tr>
-                        <tr>
-                            <td>9.5</td>
-                            <td>巨蟹座+圣杯</td>
-                            <td>家庭聚会</td>
-                            <td>情感满足，需平衡工作与家庭</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            
-            <div class="card">
-                <h3>3.4 创意玩法：冥想与自我探索</h3>
-                
-                <ol class="steps">
-                    <li>
-                        <strong>创造安静空间</strong>
-                        <p>找一个安静舒适的地方，点燃蜡烛或播放轻柔音乐。</p>
-                    </li>
-                    <li>
-                        <strong>随机组合符号</strong>
-                        <p>随机旋转各层，创造一个符号组合（如星座+元素+数字+月相）。</p>
-                    </li>
-                    <li>
-                        <strong>冥想符号能量</strong>
-                        <p>凝视组合符号，闭上眼睛，深呼吸，感受符号能量，记录浮现的想法和感受。</p>
-                    </li>
-                    <li>
-                        <strong>视觉化练习</strong>
-                        <p>根据符号组合，想象一个场景或故事，探索其对当前生活的启示。</p>
-                    </li>
-                </ol>
-                
-                <p><strong>示例冥想</strong>：</p>
-                <p>"转动到数字7（直觉）+宝剑（思考）+上弦月（行动）→ 冥想画面：在山顶思考下一步行动，感觉清晰而自信。今日行动：听从直觉，开始新的学习计划。"。</p>
+
+            <div class="qrcode">
+                <p>扫描下方二维码，获取更多塔罗运势解读资源</p>
+                <div class="qrcode-img"></div>
             </div>
         </section>
-        
-        <section id="combinations">
-            <h2>四、数字与元素、月相的联动解读</h2>
-            
-            <div class="card">
-                <h3>4.1 数字-元素-月相三维关联表</h3>
-                <p>为了帮助用户更直观地理解数字、元素和月相的协同效应，我们创建了以下关联表：</p>
-                
-                <table>
-                    <thead>
-                        <tr>
-                            <th>塔罗数字</th>
-                            <th>元素关联</th>
-                            <th>月相最佳搭配</th>
-                            <th>最佳应用场景</th>
-                            <th>关键行动建议</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>0愚人</td>
-                            <td>权杖</td>
-                            <td>新月</td>
-                            <td>新计划启动</td>
-                            <td>勇敢踏出第一步</td>
-                        </tr>
-                        <tr>
-                            <td>0愚人</td>
-                            <td>圣杯</td>
-                            <td>上弦月</td>
-                            <td>情感冒险</td>
-                            <td>敞开心扉，接受新关系</td>
-                        </tr>
-                        <tr>
-                            <td>0愚人</td>
-                            <td>宝剑</td>
-                            <td>下弦月</td>
-                            <td>思维突破</td>
-                            <td>挑战固有思维模式</td>
-                        </tr>
-                        <tr>
-                            <td>0愚人</td>
-                            <td>星币</td>
-                            <td>晦月</td>
-                            <td>财务新策略</td>
-                            <td>重新评估财务计划</td>
-                        </tr>
-                        <tr>
-                            <td>1魔术师</td>
-                            <td>权杖</td>
-                            <td>新月</td>
-                            <td>创意项目</td>
-                            <td>整合资源，开始行动</td>
-                        </tr>
-                        <tr>
-                            <td>1魔术师</td>
-                            <td>圣杯</td>
-                            <td>满月</td>
-                            <td>情感表达</td>
-                            <td>创意表达爱意</td>
-                        </tr>
-                        <tr>
-                            <td>1魔术师</td>
-                            <td>宝剑</td>
-                            <td>上弦月</td>
-                            <td>沟通策略</td>
-                            <td>准备重要演讲或提案</td>
-                        </tr>
-                        <tr>
-                            <td>1魔术师</td>
-                            <td>星币</td>
-                            <td>下弦月</td>
-                            <td>财务规划</td>
-                            <td>制定预算或投资计划</td>
-                        </tr>
-                        <tr>
-                            <td>2女祭司</td>
-                            <td>权杖</td>
-                            <td>晦月</td>
-                            <td>战略规划</td>
-                            <td>依靠直觉制定长期计划</td>
-                        </tr>
-                        <tr>
-                            <td>2女祭司</td>
-                            <td>圣杯</td>
-                            <td>新月</td>
-                            <td>情感洞察</td>
-                            <td>探索内心真实需求</td>
-                        </tr>
-                        <tr>
-                            <td>2女祭司</td>
-                            <td>宝剑</td>
-                            <td>上弦月</td>
-                            <td>决策分析</td>
-                            <td>收集信息，等待直觉</td>
-                        </tr>
-                        <tr>
-                            <td>2女祭司</td>
-                            <td>星币</td>
-                            <td>下弦月</td>
-                            <td>健康管理</td>
-                            <td>倾听身体信号</td>
-                        </tr>
-                        <tr>
-                            <td>7战车</td>
-                            <td>权杖</td>
-                            <td>上弦月</td>
-                            <td>挑战应对</td>
-                            <td>集中精力，克服障碍</td>
-                        </tr>
-                        <tr>
-                            <td>7战车</td>
-                            <td>圣杯</td>
-                            <td>满月</td>
-                            <td>关系突破</td>
-                            <td>解决长期矛盾</td>
-                        </tr>
-                        <tr>
-                            <td>7战车</td>
-                            <td>宝剑</td>
-                            <td>上弦月</td>
-                            <td>思维挑战</td>
-                            <td>参加辩论或竞赛</td>
-                        </tr>
-                        <tr>
-                            <td>7战车</td>
-                            <td>星币</td>
-                            <td>下弦月</td>
-                            <td>财务目标</td>
-                            <td>坚持预算，达成目标</td>
-                        </tr>
-                        <tr>
-                            <td>10命运之轮</td>
-                            <td>权杖</td>
-                            <td>满月</td>
-                            <td>事业转型</td>
-                            <td>拥抱变化，抓住机遇</td>
-                        </tr>
-                        <tr>
-                            <td>10命运之轮</td>
-                            <td>圣杯</td>
-                            <td>下弦月</td>
-                            <td>关系变化</td>
-                            <td>接受关系中的自然转变</td>
-                        </tr>
-                        <tr>
-                            <td>10命运之轮</td>
-                            <td>宝剑</td>
-                            <td>晦月</td>
-                            <td>思维转变</td>
-                            <td>重新评估信念系统</td>
-                        </tr>
-                        <tr>
-                            <td>10命运之轮</td>
-                            <td>星币</td>
-                            <td>新月</td>
-                            <td>财务变化</td>
-                            <td>把握新的财务机会</td>
-                        </tr>
-                        <tr>
-                            <td>21世界</td>
-                            <td>权杖</td>
-                            <td>满月</td>
-                            <td>事业成就</td>
-                            <td>庆祝成功，规划新目标</td>
-                        </tr>
-                        <tr>
-                            <td>21世界</td>
-                            <td>圣杯</td>
-                            <td>满月</td>
-                            <td>情感圆满</td>
-                            <td>庆祝关系里程碑</td>
-                        </tr>
-                        <tr>
-                            <td>21世界</td>
-                            <td>宝剑</td>
-                            <td>下弦月</td>
-                            <td>思维整合</td>
-                            <td>总结学习成果</td>
-                        </tr>
-                        <tr>
-                            <td>21世界</td>
-                            <td>星币</td>
-                            <td>晦月</td>
-                            <td>财务整合</td>
-                            <td>年终财务总结</td>
-                        </tr>
-                    </tbody>
-                </table>
+    </div>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="footer-content">
+            <h3 class="footer-title">塔罗运势历</h3>
+            <p>一款连接内在力量与宇宙能量的自我觉察工具</p>
+            <p>使用过程中有任何疑问或反馈，欢迎联系我们</p>
+            <div class="copyright">
+                © 2023 塔罗运势历 版权所有 | 仅供个人自我探索使用
             </div>
-            
-            <div class="card">
-                <h3>4.2 数字与星期的联动建议</h3>
-                <p>数字与星期组合时，会产生特定的协同效应。以下是数字与星期的联动建议：</p>
-                
-                <table>
-                    <thead>
-                        <tr>
-                            <th>数字</th>
-                            <th>最佳星期</th>
-                            <th>次佳星期</th>
-                            <th>行动建议</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>0愚人</td>
-                            <td>星期一</td>
-                            <td>星期五</td>
-                            <td>新计划启动，创意项目</td>
-                        </tr>
-                        <tr>
-                            <td>1魔术师</td>
-                            <td>星期二</td>
-                            <td>星期五</td>
-                            <td>项目规划，创意表达</td>
-                        </tr>
-                        <tr>
-                            <td>2女祭司</td>
-                            <td>星期一</td>
-                            <td>星期日</td>
-                            <td>内省，直觉探索</td>
-                        </tr>
-                        <tr>
-                            <td>3皇后</td>
-                            <td>星期日</td>
-                            <td>星期三</td>
-                            <td>家庭活动，创意工作</td>
-                        </tr>
-                        <tr>
-                            <td>4皇帝</td>
-                            <td>星期四</td>
-                            <td>星期二</td>
-                            <td>组织管理，系统建立</td>
-                        </tr>
-                        <tr>
-                            <td>5教皇</td>
-                            <td>星期三</td>
-                            <td>星期一</td>
-                            <td>学习新知识，寻求指导</td>
-                        </tr>
-                        <tr>
-                            <td>6恋人</td>
-                            <td>星期三</td>
-                            <td>星期五</td>
-                            <td>情感决策，合作关系</td>
-                        </tr>
-                        <tr>
-                            <td>7战车</td>
-                            <td>星期二</td>
-                            <td>星期四</td>
-                            <td>面对挑战，坚持目标</td>
-                        </tr>
-                        <tr>
-                            <td>8力量</td>
-                            <td>星期二</td>
-                            <td>星期六</td>
-                            <td>克服困难，自我提升</td>
-                        </tr>
-                        <tr>
-                            <td>9隐者</td>
-                            <td>星期日</td>
-                            <td>星期一</td>
-                            <td>反思，寻求真理</td>
-                        </tr>
-                        <tr>
-                            <td>10命运之轮</td>
-                            <td>星期五</td>
-                            <td>星期二</td>
-                            <td>面对转变，适应环境</td>
-                        </tr>
-                        <tr>
-                            <td>11正义</td>
-                            <td>星期四</td>
-                            <td>星期三</td>
-                            <td>解决冲突，法律事务</td>
-                        </tr>
-                        <tr>
-                            <td>12吊人</td>
-                            <td>星期日</td>
-                            <td>星期一</td>
-                            <td>等待时机，改变视角</td>
-                        </tr>
-                        <tr>
-                            <td>13死神</td>
-                            <td>星期六</td>
-                            <td>星期二</td>
-                            <td>放下过去，新开始</td>
-                        </tr>
-                        <tr>
-                            <td>14节制</td>
-                            <td>星期三</td>
-                            <td>星期四</td>
-                            <td>健康管理，情绪调节</td>
-                        </tr>
-                        <tr>
-                            <td>15恶魔</td>
-                            <td>星期六</td>
-                            <td>星期四</td>
-                            <td>面对诱惑，自我解放</td>
-                        </tr>
-                        <tr>
-                            <td>16高塔</td>
-                            <td>星期二</td>
-                            <td>星期五</td>
-                            <td>危机应对，破旧立新</td>
-                        </tr>
-                        <tr>
-                            <td>17星星</td>
-                            <td>星期日</td>
-                            <td>星期五</td>
-                            <td>寻找灵感，设定愿景</td>
-                        </tr>
-                        <tr>
-                            <td>18月亮</td>
-                            <td>星期一</td>
-                            <td>星期日</td>
-                            <td>梦境解析，创意工作</td>
-                        </tr>
-                        <tr>
-                            <td>19太阳</td>
-                            <td>星期日</td>
-                            <td>星期五</td>
-                            <td>庆祝成就，提振士气</td>
-                        </tr>
-                        <tr>
-                            <td>20审判</td>
-                            <td>星期日</td>
-                            <td>星期一</td>
-                            <td>重大决策，自我评估</td>
-                        </tr>
-                        <tr>
-                            <td>21世界</td>
-                            <td>星期日</td>
-                            <td>星期五</td>
-                            <td>总结成果，新开始</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-        
-        <section id="tips">
-            <h2>五、实用技巧与创意应用</h2>
-            
-            <div class="card">
-                <h3>5.1 特殊日期的解读技巧</h3>
-                
-                <div class="highlight">
-                    <p><strong>生日解读</strong>：</p>
-                    <p>在生日当天，将第三层至第五层调整至出生日期，转动第一层至对应星座，第二层至对应元素，进行年度回顾与展望。</p>
-                    
-                    <p><strong>新月许愿</strong>：</p>
-                    <p>在新月时，转动第七层至新月，第二层至目标领域，第四层和第五层组合成相关数字，设定愿望或目标。</p>
-                    
-                    <p><strong>满月感恩</strong>：</p>
-                    <p>在满月时，转动第七层至满月，第二层至感恩领域，第四层和第五层组合成相关数字，进行感恩仪式。</p>
-                </div>
-            </div>
-            
-            <div class="card">
-                <h3>5.2 数字能量自测表</h3>
-                <p>根据当前需求，快速匹配塔罗数字，获取针对性建议：</p>
-                
-                <table>
-                    <thead>
-                        <tr>
-                            <th>当前需求</th>
-                            <th>推荐数字</th>
-                            <th>元素建议</th>
-                            <th>月相建议</th>
-                            <th>星期建议</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>启动新项目</td>
-                            <td>0愚人、1魔术师</td>
-                            <td>权杖</td>
-                            <td>新月</td>
-                            <td>星期二</td>
-                        </tr>
-                        <tr>
-                            <td>改善人际关系</td>
-                            <td>2女祭司、6恋人</td>
-                            <td>圣杯</td>
-                            <td>上弦月</td>
-                            <td>星期三</td>
-                        </tr>
-                        <tr>
-                            <td>解决冲突</td>
-                            <td>8力量、11正义</td>
-                            <td>宝剑</td>
-                            <td>下弦月</td>
-                            <td>星期四</td>
-                        </tr>
-                        <tr>
-                            <td>财务规划</td>
-                            <td>4皇帝、10命运之轮</td>
-                            <td>星币</td>
-                            <td>晦月</td>
-                            <td>星期四</td>
-                        </tr>
-                        <tr>
-                            <td>创意表达</td>
-                            <td>3皇后、9隐者</td>
-                            <td>权杖/圣杯</td>
-                            <td>上弦月</td>
-                            <td>星期五</td>
-                        </tr>
-                        <tr>
-                            <td>学习新技能</td>
-                            <td>5教皇、7战车</td>
-                            <td>宝剑</td>
-                            <td>上弦月</td>
-                            <td>星期三</td>
-                        </tr>
-                        <tr>
-                            <td>面对变化</td>
-                            <td>10命运之轮、21世界</td>
-                            <td>综合</td>
-                            <td>下弦月</td>
-                            <td>星期五</td>
-                        </tr>
-                        <tr>
-                            <td>休息整合</td>
-                            <td>9隐者、12吊人</td>
-                            <td>星币</td>
-                            <td>晦月</td>
-                            <td>星期日</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            
-            <div class="card">
-                <h3>5.3 创意组合：自定义主题探索</h3>
-                <p>塔罗万年历支持各种创意组合，以下是几种推荐的自定义主题探索玩法：</p>
-                
-                <div class="highlight">
-                    <p><strong>主题1：元素之旅</strong></p>
-                    <ul>
-                        <li>选择一个元素（如权杖）</li>
-                        <li>每天转动该元素+不同星座+当前月相+星期</li>
-                        <li>探索该元素在不同星座和时间中的表现</li>
-                    </ul>
-                    
-                    <p><strong>主题2：数字探索</strong></p>
-                    <ul>
-                        <li>选择一个数字（如7）</li>
-                        <li>每天转动该数字+不同元素+当前月相+星期</li>
-                        <li>探索该数字在不同元素和时间中的表现</li>
-                    </ul>
-                    
-                    <p><strong>主题3：星座与月相的对话</strong></p>
-                    <ul>
-                        <li>选择一个星座（如天蝎座）</li>
-                        <li>转动该星座+不同元素+不同月相</li>
-                        <li>探索星座能量在不同月相中的变化</li>
-                    </ul>
-                    
-                    <p><strong>主题4：季节能量探索</strong></p>
-                    <ul>
-                        <li>根据季节转动对应元素（春→权杖，夏→圣杯，秋→宝剑，冬→星币）</li>
-                        <li>结合当季星座、月相和星期</li>
-                        <li>探索季节能量对个人的影响</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        
-        <section id="notes">
-            <h2>六、注意事项与使用建议</h2>
-            
-            <div class="card">
-                <h3>6.1 产品使用注意事项</h3>
-                <ol>
-                    <li><strong>非占卜工具</strong>：本产品为自我觉察辅助工具，不提供预测或宿命论断，解读结果仅供参考。</li>
-                    <li><strong>主观解读原则</strong>：塔罗符号的解读具有主观性，建议根据个人经验和直觉进行解读，不必拘泥于固定含义。</li>
-                    <li><strong>尊重多元理解</strong>：不同文化背景和个人经验可能导致对同一符号的不同理解，尊重并接纳多元解读。</li>
-                    <li><strong>创意使用</strong>：本产品鼓励创意使用，可以根据个人需求和喜好开发新的玩法和组合方式。</li>
-                    <li><strong>定期清洁</strong>：产品为木质结构，避免阳光直射，用干净软布定期擦拭，保持旋转顺畅。</li>
-                </ol>
-            </div>
-            
-            <div class="card">
-                <h3>6.2 数字解读的平衡视角</h3>
-                <p>在解读数字时，保持平衡视角至关重要。以下是一些平衡视角的建议：</p>
-                
-                <ol>
-                    <li><strong>数字的双重性</strong>：每个数字都有正负两面，解读时需同时关注潜力和挑战。例如：
-                        <ul>
-                            <li>数字1（魔术师）：潜力是创造力，挑战是自负</li>
-                            <li>数字7（战车）：潜力是意志力，挑战是固执</li>
-                        </ul>
-                    </li>
-                    <li><strong>情境决定意义</strong>：数字的意义会因具体情境而变化。例如：
-                        <ul>
-                            <li>数字10（命运之轮）在事业情境中可能代表转变，在健康情境中可能代表健康状况的变化</li>
-                        </ul>
-                    </li>
-                    <li><strong>动态而非静态</strong>：数字能量是流动的，而非固定不变的。例如：
-                        <ul>
-                            <li>数字13（死神）并非代表真正的死亡，而是旧事物的结束和新事物的开始</li>
-                        </ul>
-                    </li>
+        </div>
+    </footer>
+
+
+</body></html>
